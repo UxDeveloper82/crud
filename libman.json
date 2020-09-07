@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "provider": "unpkg",
+      "library": "font-awesome@4.7.0",
+      "destination": "wwwroot/font-awesome/",
+      "files": [
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2",
+        "fonts/FontAwesome.otf"
+      ]
+    },
+    {
+      "library": "font-awesome@5.14.0",
+      "destination": "wwwroot/font-awesome/"
+    },
+    {
+      "library": "datatable@2.0.1",
+      "destination": "wwwroot/datatable/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "datatables@1.10.18",
+      "destination": "wwwroot/datatables/",
+      "files": [
+        "media/css/jquery.dataTables.css",
+        "media/css/jquery.dataTables.min.css",
+        "media/images/favicon.ico",
+        "media/images/Sorting icons.psd",
+        "media/images/sort_asc.png",
+        "media/images/sort_asc_disabled.png",
+        "media/images/sort_both.png",
+        "media/images/sort_desc.png",
+        "media/images/sort_desc_disabled.png",
+        "media/js/jquery.dataTables.js",
+        "media/js/jquery.dataTables.min.js",
+        "license.txt",
+        "package.json",
+        "Readme.md"
+      ]
+    },
+    {
+      "provider": "unpkg",
+      "library": "bootbox.js@4.3.0",
+      "destination": "wwwroot/bootbox.js/"
+    },
+    {
+      "library": "bootbox.js@5.4.0",
+      "destination": "wwwroot/bootbox.js/"
+    }
+  ]
+}

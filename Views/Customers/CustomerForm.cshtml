@@ -1,0 +1,62 @@
+﻿@model PartsInventory.ViewModels.CustomerFormViewModel
+
+@{
+    ViewData["Title"] = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>New Customer</h2>
+
+@using (Html.BeginForm("Save", "Customers"))
+{
+    @Html.ValidationSummary(true, "Please fix the following erros.")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.FirstName)
+        @Html.TextBoxFor(m => m.Customer.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.LastName)
+        @Html.TextBoxFor(m => m.Customer.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.LastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.Email)
+        @Html.TextBoxFor(m => m.Customer.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.Email)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.MobilPhone)
+        @Html.TextBoxFor(m => m.Customer.MobilPhone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.MobilPhone)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.BillingAddress)
+        @Html.TextBoxFor(m => m.Customer.BillingAddress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.BillingAddress)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.City)
+        @Html.TextBoxFor(m => m.Customer.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.City)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.State)
+        @Html.TextBoxFor(m => m.Customer.State, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.State)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer.PostalCode)
+        @Html.TextBoxFor(m => m.Customer.PostalCode, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Customer.PostalCode)
+    </div>
+    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+}

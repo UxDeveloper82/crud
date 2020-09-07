@@ -10,6 +10,7 @@ namespace PartsInventory.Data.Repository
     public interface IRepository
     {
         Part GetPart(int id);
+
         List<Part> GetAllParts();
 
         void AddPart(Part part);

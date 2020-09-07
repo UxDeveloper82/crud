@@ -12,7 +12,9 @@ namespace PartsInventory.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
 
         public DbSet<Part> Parts { get; set; }
-
+        public DbSet<MyMessage> MyMessages { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Scheduled> Scheduleds { get; set; }
 
 
     }

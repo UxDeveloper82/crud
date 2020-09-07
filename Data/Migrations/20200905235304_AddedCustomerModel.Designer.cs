@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PartsInventory.Data;
 
 namespace PartsInventory.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200905235304_AddedCustomerModel")]
+    partial class AddedCustomerModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -256,29 +258,6 @@ namespace PartsInventory.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Parts");
-                });
-
-            modelBuilder.Entity("PartsInventory.Models.Scheduled", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CustomerName");
-
-                    b.Property<bool>("IsFullDay");
-
-                    b.Property<string>("ThemeColor");
-
-                    b.Property<DateTime>("TimeIn");
-
-                    b.Property<DateTime>("TimeOut");
-
-                    b.Property<int>("WorkOrder");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Scheduleds");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

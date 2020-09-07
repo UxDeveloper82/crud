@@ -1,0 +1,85 @@
+﻿@model IEnumerable<PartsInventory.Models.MyMessage>
+
+@{
+
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<h2>My Messages</h2>
+<br />
+<a href="/home/admin" class="btn btn-primary btn-lg">Go to Control Panel</a>
+<br />
+<br />
+@if (!Model.Any())
+{
+    <p>We dont have any Messages yet.</p>
+}
+else
+{
+    <div style="overflow-x:auto;">
+        <table id="mymessages" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Messages</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mymessage in Model)
+                {
+                    <tr>
+                        <td>@mymessage.Name</td>
+                        <td>@mymessage.Email</td>
+                        <td>@mymessage.Message</td>
+                        <td>
+                            <button data-mymessage-id="@mymessage.Id" class="btn btn-info js-delete">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#mymessages").DataTable();
+
+
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

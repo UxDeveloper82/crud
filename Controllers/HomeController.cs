@@ -29,6 +29,15 @@ namespace PartsInventory.Controllers
             return View();
         }
 
+        public IActionResult Admin() 
+        {
+            ViewData["Message"] = "Your Admin Page.";
+
+            return View();
+        }
+
+
+
         public IActionResult Privacy()
         {
             return View();
