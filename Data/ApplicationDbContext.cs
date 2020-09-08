@@ -15,7 +15,7 @@ namespace PartsInventory.Data
         public DbSet<MyMessage> MyMessages { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Scheduled> Scheduleds { get; set; }
-
+        public DbSet<Post> Posts { get; set; }
 
     }
 }

@@ -42,6 +42,7 @@ namespace PartsInventory
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddTransient<IPostRepository, PostRepository>();
             services.AddScoped<IRepository, Repository>();
         }
 
