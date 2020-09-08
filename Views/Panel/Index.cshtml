@@ -1,0 +1,74 @@
+﻿@model IEnumerable<PartsInventory.Models.Post>
+
+@{
+
+
+}
+
+<div class="d-flex" id="wrapper">
+
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="table-responsive">
+                <table class="table table-stripped table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Title</th>
+                            <th>Body</th>
+                            <td>Category</td>
+                            <th>Created</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var post in Model)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(ModelPost => post.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(ModelPost => post.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(ModelPost => post.Body)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(ModelPost => post.Category)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(ModelPost => post.CreatedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(ModelPost => post.Created)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete", "Remove", new { id = post.Id /*id=item.PrimaryKey */ })
+                            </td>
+                        </tr>
+
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+</div>
